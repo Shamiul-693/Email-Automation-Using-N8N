@@ -84,5 +84,27 @@ return [
     }
 ];
 
+2. Personalisation (Set Node Expression)
+This expression is used within a Set Node to replace the placeholder [name] in the template body with the actual recipient's name from the lead data.
+{{ $json.body.replace("[name]", $json["Name"] && $json["Name"].trim() !== '' ? $json["Name"].trim() : "there") }}
 
+3. Send Status & Timestamp Logging (Google Sheet Update)
+These expressions capture the send outcome from the Gmail node and the current time to log back into the Google Sheet.
+Data Point	n8n Expression	Details
+Send Status (Gmail)	{{ $json.labelIds[0] }}	Captures the Gmail label ID (SENT or other) as confirmation of sending.
+Timestamp	{{ new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Kolkata", hour12: false }) }}	Logs the time of sending, ensuring consistent time zone reporting.
+
+
+🚀 Installation and Setup
+Import Workflow: Import the n8n workflow file (JSON) into your n8n instance.
+
+Add Credentials: Update the Google Sheets and Gmail nodes with your respective OAuth credentials.
+
+Configure Sheet Nodes:
+
+Verify the Google Sheets Read nodes are correctly configured to pull data from Sheet 1 (Leads) and Sheet 2 (Templates).
+
+Verify the Google Sheets Write node is set up to log the status and timestamp to the appropriate columns in your leads sheet.
+
+Activate: Save and activate the workflow to begin sending.
 
