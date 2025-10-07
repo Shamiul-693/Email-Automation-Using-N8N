@@ -96,16 +96,17 @@ These expressions capture the send outcome from the Gmail node and the current t
 Data Point	n8n Expression	Details
 <img width="686" height="182" alt="image" src="https://github.com/user-attachments/assets/cedf85ea-c040-42bf-b5d8-06a895a10bf2" />
 
+---
+33 🚀 Installation and Setup
+Follow these steps to get the email automation workflow up and running in your n8n instance:
 Import Workflow: Import the n8n workflow file (JSON) into your n8n instance.
 
 1.   Add Credentials: Update the Google Sheets and Gmail nodes with your respective OAuth credentials.
 
-2. Configure Sheet Nodes:
+2. Verify the Google Sheets Read nodes are correctly configured to pull data from Sheet 1 (Leads) and Sheet 2 (Templates).
 
-3. Verify the Google Sheets Read nodes are correctly configured to pull data from Sheet 1 (Leads) and Sheet 2 (Templates).
+3. Verify the Google Sheets Write node is set up to log the status and timestamp to the appropriate columns in your leads sheet.
 
-4. Verify the Google Sheets Write node is set up to log the status and timestamp to the appropriate columns in your leads sheet.
-
-5. Activate: Save and activate the workflow to begin sending.
+4. Activate: Save and activate the workflow to begin sending.
 
 ---
